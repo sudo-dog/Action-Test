@@ -1,0 +1,27 @@
+name: CI
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - name: Set Environment
+      run: |
+        echo ::set-env name=version::0.0.1
+    - uses: sudodotdog/action-commit-and-push@master
+      with:
+        username: bot
+        email: bot@example.com
+        token: ${{ secrets.GITHUB_TOKEN }}
+        message: "Chore: Bump Version to"
+        version: ${version}
