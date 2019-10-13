@@ -25,4 +25,4 @@ jobs:
         email: bot@example.com
         token: ${{ secrets.GITHUB_TOKEN }}
         message: "Chore: Bump Version to ${{ steps.set-output.outputs.action_fruit }}"
-        version: ${{ version }}
+        version: test
