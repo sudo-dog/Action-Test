@@ -18,7 +18,7 @@ jobs:
     - name: Set Output
       id: set-output
       run: |
-        echo ::set-output name=action_fruit::strawberry
+        echo ::set-output name=action_fruit::$(echo test)
     - uses: sudodotdog/action-commit-and-push@master
       with:
         username: bot
