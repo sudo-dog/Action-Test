@@ -24,4 +24,4 @@ jobs:
         email: bot@example.com
         token: ${{ secrets.GITHUB_TOKEN }}
         message: "Chore: Bump Version to"
-        version: ${version}
+        version: ${{ version }}
