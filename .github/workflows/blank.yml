@@ -15,13 +15,14 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-    - name: Set Environment
+    - name: Set Output
+      id: set-output
       run: |
-        echo ::set-env name=version::0.0.1
+        echo ::set-output name=action_fruit::strawberry
     - uses: sudodotdog/action-commit-and-push@master
       with:
         username: bot
         email: bot@example.com
         token: ${{ secrets.GITHUB_TOKEN }}
-        message: "Chore: Bump Version to"
+        message: "Chore: Bump Version to ${{ steps.set-output.outputs.action_fruit }}"
         version: ${{ version }}
